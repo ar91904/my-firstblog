@@ -23,10 +23,17 @@
                         {% for post in posts %}
                             <article class="post">
                                 <time class="date">
-                                    {{ post.published_date }}
+                                    {{ post.published_date | date:"l F j H:m" }}
                                 </time>
-                                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                                <p>{{ post.text|linebreaksbr }}</p>
+                                <h2><a href="{% url 'post_detail' pk=post.id %}">{{ post.title }}</a></h2>
+                                <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+                                <label for="checkbox_id"><p>{{ post.text|linebreaksbr }}</p></label>
+                                <br /><input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+                                <label for="checkbox_id"><p>{{ post.text1|linebreaksbr }}</p></label>
+                                <br /><input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+                                <label for="checkbox_id"><p>{{ post.text2|linebreaksbr }}</p></label>
+                                <br /><input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+                                <label for="checkbox_id"><p>{{ post.text3|linebreaksbr }}</p></label>
                             </article>
                         {% endfor %}
                     {% endblock %}

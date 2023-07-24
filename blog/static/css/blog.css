@@ -1,5 +1,5 @@
 .page-header {
-    background-color: #C25100;
+    background-color: #264653;
     margin-top: 0;
     margin-bottom: 40px;
     padding: 20px 20px 20px 40px;
@@ -9,9 +9,13 @@
 .page-header h1 a,
 .page-header h1 a:visited,
 .page-header h1 a:active {
-    color: #ffffff;
+    color: #aab6ba;
     font-size: 36pt;
     text-decoration: none;
+}
+
+.body {
+    background-color: e6f5f4;
 }
 
 h1,
@@ -23,6 +27,8 @@ h4 {
 
 .date {
     color: #828282;
+    padding-right: 10px;
+    padding-top: 7px;
 }
 
 .save {
@@ -37,7 +43,7 @@ h4 {
 .top-menu,
 .top-menu:hover,
 .top-menu:visited {
-    color: #ffffff;
+    color: #aab6ba;
     float: right;
     font-size: 26pt;
     margin-right: 20px;
@@ -59,12 +65,12 @@ h4 {
 
 .btn-secondary,
 .btn-secondary:visited {
-    color: #C25100;
+    color: #264653;
     background: none;
-    border-color: #C25100;
+    border-color: #264653;
 }
 
 .btn-secondary:hover {
     color: #FFFFFF;
-    background-color: #C25100;
+    background-color: #264653;
 }
