@@ -6,7 +6,8 @@
         {{ form.as_p }}
         <button type="submit" class="save btn btn-secondary">Save</button>
     </form>
-    {% if post in posts %}
+
+    {% if post %}
     <form method="POST" action="{% url 'deleteTodoItem' pk=post.id %}">{% csrf_token %}
             <input type="submit" value="Delete">
         </form>
