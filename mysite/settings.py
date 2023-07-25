@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 LOGIN_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
+LOGOUT_URL = 'logged_out'
 
 # Application definition
 
