@@ -12,10 +12,10 @@
             <div class="container">
                 <span class="user">
                     {% if request.user.is_authenticated %}
-                        Hello {{ request.user.first_name }},
-                        <a href="{% url 'logged_out' %}">Logout</a>
-                    {% else %}
-                        <a href="{% url 'login' %}">Log in</a>
+                        <p class="selected">
+                            Hello {{ request.user.first_name }},
+                            <a href="{% url 'dashboard' %}" class="dashboard"> Dashboard</a>
+                        </p>
                     {% endif %}
                 </span>
 

@@ -2,19 +2,16 @@ from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
 from django.shortcuts import render, get_object_or_404
-from .forms import PostForm, CommentForm, LoginForm
+from .forms import PostForm, CommentForm, LoginForm, UserRegistrationForm
 from django.shortcuts import redirect
 from django .core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
-
 @login_required
 def dashboard(request):
-    return render(request,
-                  'blog/dashboard.html',
-                  {'section': 'dashbaord'})
+    return render(request,'blog/dashboard.html', {'section': 'dashboard'})
 
 
 def post_list(request):
@@ -116,4 +113,20 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'blog/login.html', {'form': form})
 
-
+def register(request):
+    if request.method == ("POST"):
+        user_form = UserRegistrationForm(request.POST)
+        if user_form.is_valid():
+            # Create new user object but avoid saving it 
+            new_user = user_form.save(commit=False)
+            # Set chosen password
+            new_user.set_password(
+                user_form.cleaned_data['password'])
+            # Save the user object
+            new_user.save()
+            return render(request, 'blog/register_done.html', 
+                          {'new_user': new_user})
+    else:
+        user_form = UserRegistrationForm()
+    return render(request, 'blog/register.html', 
+                  {'user_form': user_form})
