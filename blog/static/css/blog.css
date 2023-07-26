@@ -13,11 +13,11 @@
 }
 
 .page-header h1 a:hover {
-    color: #98a3a6
+    color: #98a3a6;
 }
 
-.body {
-    background-color: #e6f5f4;
+.tags {
+    color: #cdcdcd;
 }
 
 h1,
@@ -28,7 +28,7 @@ h4 {
 }
 
 .date {
-    color: #828282;
+    color: #b4b4b4;
     padding-right: 10px;
     padding-top: 7px;
 }
@@ -50,7 +50,7 @@ h4 {
 }
 
 .top-menu:hover {
-    color:#98a3a6
+    color:#98a3a6;
 }
 
 .post {
@@ -58,11 +58,11 @@ h4 {
 }
 
 .post h2 a {
-    color: #000000;
+    color: #98a3a6;
 }
 
 .post h2 a:hover {
-    color:#454545;
+    color:#788184;
 }
 
 .post > .date,

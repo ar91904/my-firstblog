@@ -16,14 +16,16 @@
             </time>
         {% endif %}
         <h2>{{ post.title }}</h2>
-        <br /><input type="checkbox" name="checkbox" id="checkbox_id" value="value" onclick="">
+        <p>{{ post.author }}</p>
+        <br/>
+        <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
         <label for="checkbox_id"><p>{{ post.text|linebreaksbr }}</p></label>
-        <br /><input type="checkbox" name="checkbox1" id="checkbox1_id" value="value">
-        <label for="checkbox1_id"><p>{{ post.text1|linebreaksbr }}</p></label>
-        <br /><input type="checkbox" name="checkbox2" id="checkbox2_id" value="value">
-        <label for="checkbox2_id"><p>{{ post.text2|linebreaksbr }}</p></label>
-        <br /><input type="checkbox" name="checkbox3" id="checkbox3_id" value="value">
-        <label for="checkbox3_id"><p>{{ post.text3|linebreaksbr }}</p></label>
+        <br /><input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+        <label for="checkbox_id"><p>{{ post.text1|linebreaksbr }}</p></label>
+        <br /><input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+        <label for="checkbox_id"><p>{{ post.text2|linebreaksbr }}</p></label>
+        <br /><input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+        <label for="checkbox_id"><p>{{ post.text3|linebreaksbr }}</p></label>
     </article>
     {% with comments.count as total_comments %}
         <h2>

@@ -9,9 +9,12 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
+
 @login_required
 def dashboard(request):
+    # If logged in can access dashboard
     return render(request,'blog/dashboard.html', {'section': 'dashboard'})
+
 
 
 def post_list(request):
@@ -32,7 +35,7 @@ def post_list(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk,)
-
+    
     # List of active comments for this post
     comments = post.comments.filter(active=True)
     comment_form = CommentForm(data=request.POST)
@@ -59,6 +62,7 @@ def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
+            # Don't save post yet
             post = form.save(commit=False)
             post.author = request.user
             post.published_date = timezone.now()
@@ -88,6 +92,7 @@ def deleteTodoItem(request, pk):
         print(pk)
         y = Post.objects.get(pk=pk)
         y.delete()
+        # Redirects back to main page
         return redirect('/')
     else:
         form = PostForm(instance=post)
