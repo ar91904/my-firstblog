@@ -11,7 +11,7 @@ class Post(models.Model):
     text1 = models.CharField(max_length=250, default='')
     text2 = models.CharField(max_length=250, default='')
     text3 = models.CharField(max_length=250, default='')
-    published_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(default=timezone.now().strftime(("%d.%m.%Y %H:%M")))
     created_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=10)
     tags = TaggableManager()
