@@ -5,6 +5,10 @@
     padding: 20px 20px 20px 40px;
 }
 
+body {
+    background-color:#405f6b;
+}
+
 .page-header h1,
 .page-header h1 a {
     color: #c3d1d5;
