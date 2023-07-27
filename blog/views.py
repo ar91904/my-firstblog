@@ -18,7 +18,7 @@ def dashboard(request):
 
 
 def post_list(request):
-    object_list = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    object_list = Post.objects.filter(created_date__lte=timezone.now()).order_by('published_date')
 
     page = request.GET.get('page')
     paginator = Paginator(object_list, 3) # 3 posts per page
@@ -65,7 +65,7 @@ def post_new(request):
             # Don't save post yet
             post = form.save(commit=False)
             post.author = request.user
-            post.published_date = timezone.now()
+            post.published_date = timezone.now() + timezone.timedelta(days=7)
             post.save()
             return redirect('post_detail', pk=post.id)
     else:

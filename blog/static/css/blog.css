@@ -61,12 +61,36 @@ h4 {
     margin-bottom: 70px;
 }
 
+.register,
+.change_,
+.logout,
+.home {
+    color: #212529;
+}
+
+.register:hover,
+.change_:hover,
+.logout:hover,
+.home:hover {
+    color: #393e43;
+}
+
+.login-dash,
+.dashboard {
+    color: #1b1f22
+}
+
+.login-dash:hover,
+.dashboard:hover {
+    color: #2c3033
+}
+
 .post h2 a {
-    color: #98a3a6;
+    color: #212529;
 }
 
 .post h2 a:hover {
-    color:#788184;
+    color: #393e43;
 }
 
 .post > .date,

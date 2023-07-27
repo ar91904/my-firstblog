@@ -5,10 +5,6 @@ from taggit.managers import TaggableManager
 
 
 class Post(models.Model):
-    STATUS_CHOICES = (
-        ('draft', 'Draft'),
-        ('published', 'Published'),
-    )
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.CharField(max_length=250)
@@ -17,9 +13,7 @@ class Post(models.Model):
     text3 = models.CharField(max_length=250, default='')
     published_date = models.DateTimeField(default=timezone.now)
     created_date = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=10,
-                              choices=STATUS_CHOICES,
-                              default='published')
+    status = models.CharField(max_length=10)
     tags = TaggableManager()
 
     def publish(self):
